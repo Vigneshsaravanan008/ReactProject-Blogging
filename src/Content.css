@@ -16,6 +16,18 @@
   margin-top: 15px;
 }
 
+.vl {
+  border-left: 1px solid black;
+  height: 500px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  padding:2px;
+}
 
 a {
   text-decoration: none;

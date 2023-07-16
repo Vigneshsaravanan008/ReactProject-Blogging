@@ -30,3 +30,18 @@ export const RegisterApi = async (datas) => {
         return []
     }
 }
+
+export const GetProfile = async (token) => {
+    try {
+        const config = {
+            method: "get",
+            url: "profile",
+            headers: { "Authorization": `Bearer ${token}` }
+        }
+        const response = await axios(config);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+}

@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
-import { LoginApi } from './Api';
+import { GetProfile, LoginApi } from './Api';
 import Alert from 'react-bootstrap/Alert';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+    let navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [alert, setAlert] = useState(false);
     const [message, setMessage] = useState("");
-    let history = useHistory();
 
+    useEffect(() => {
+        var USER_TOKEN = localStorage.getItem('token');
+        if (USER_TOKEN === undefined) {
+            navigate('/login');
+        } else {
+            var getResponse = GetProfile(USER_TOKEN);
+            if (getResponse.status == 403) {
+                navigate('/login');
+            } else {
+                navigate('/home');
+            }
+        }
+    })
     const RegisterSubmit = async () => {
         const formData = new FormData()
         formData.append("email", email)
@@ -22,7 +35,7 @@ function Login() {
         const getLoginresponse = await LoginApi(formData);
         if (getLoginresponse.status === 200) {
             localStorage.setItem('token', getLoginresponse.token);
-            history.push('/home')
+            navigate("/home");
         } else {
             setAlert(true);
             setMessage(getLoginresponse.message)

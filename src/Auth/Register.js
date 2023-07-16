@@ -1,18 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
-import { RegisterApi } from './Api';
+import { GetProfile, RegisterApi } from './Api';
 import Alert from 'react-bootstrap/Alert';
+import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Register() {
+    let navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [alert, setAlert] = useState(false);
     const [message, setMessage] = useState("");
+
+    useEffect(() => {
+        var USER_TOKEN = localStorage.getItem('token');
+        if (USER_TOKEN === undefined) {
+            navigate('/login');
+        } else {
+            var getResponse = GetProfile(USER_TOKEN);
+            if (getResponse.status == 403) {
+                navigate('/login');
+            } else {
+                navigate('/home');
+            }
+        }
+    })
 
     const RegisterSubmit = async () => {
         const formData = new FormData()
@@ -21,7 +37,7 @@ function Login() {
         formData.append("password", password)
         const getRegisterresponse = await RegisterApi(formData);
         if (getRegisterresponse.status === 200) {
-            
+
         } else {
             setAlert(true);
             setMessage(getRegisterresponse.message)
@@ -77,4 +93,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Register
