@@ -22,7 +22,7 @@ function Register() {
             navigate('/login');
         } else {
             var getResponse = GetProfile(USER_TOKEN);
-            if (getResponse.status == 403) {
+            if (getResponse.status === 403) {
                 navigate('/login');
             } else {
                 navigate('/home');

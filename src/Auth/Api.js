@@ -45,3 +45,49 @@ export const GetProfile = async (token) => {
         return [];
     }
 }
+
+export const GetBlog = async (token) => {
+    try {
+        const config = {
+            method: "post",
+            url: "/blog/posts",
+            headers: { "Authorization": `Bearer ${token}` }
+        }
+        const response = await axios(config);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+}
+
+export const GetBlogCreate = async (datas, token) => {
+    try {
+        const config = {
+            method: "post",
+            url: "/blog/create",
+            data: datas,
+            headers: { "Authorization": `Bearer ${token}` }
+        }
+        const response = await axios(config);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+}
+
+export const GetBlogEdit = async (token) => {
+    try {
+        const config = {
+            method: "post",
+            url: "/blog/edit",
+            headers: { "Authorization": `Bearer ${token}` }
+        }
+        const response = await axios(config);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+}

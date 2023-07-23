@@ -15,7 +15,7 @@ function Sidebar() {
     const getProfile = async () => {
         token = localStorage.getItem('token');
         var getResponse = await GetProfile(token);
-        if (getResponse.status == 403) {
+        if (getResponse.status === 403) {
             navigate('/login');
         } else {
             setUser(getResponse.user);
@@ -34,7 +34,7 @@ function Sidebar() {
                 </Col>
                 {user.name}
                 <div>
-                    <Button variant="primary" className="mt-3">Add Post</Button>
+                    <Button href="/blog/create" variant="primary" className="mt-3">Add Post</Button>
                 </div>
             </div>
             <hr />

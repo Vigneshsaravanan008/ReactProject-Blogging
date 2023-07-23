@@ -31,3 +31,9 @@ a {
   margin-top: 15px;
 }
 
+.label-tag {
+  background-color: rgb(161, 161, 161);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+}

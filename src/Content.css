@@ -6,6 +6,10 @@
   width: 960px; 
 } */
 
+* {
+  margin: 5px;
+}
+
 .content {
   font-family: "Oswald", sans-serif;
   font-size: x-large;
@@ -26,7 +30,7 @@ ul {
 }
 
 ul li {
-  padding:2px;
+  padding: 2px;
 }
 
 a {
@@ -64,3 +68,4 @@ a {
 .checkbox {
   margin-left: 10px;
 }
+
