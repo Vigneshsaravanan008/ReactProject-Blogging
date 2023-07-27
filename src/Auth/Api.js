@@ -77,11 +77,30 @@ export const GetBlogCreate = async (datas, token) => {
     }
 }
 
-export const GetBlogEdit = async (token) => {
+export const GetBlogEdit = async (id, token) => {
     try {
         const config = {
             method: "post",
             url: "/blog/edit",
+            data: {
+                'id': id
+            },
+            headers: { "Authorization": `Bearer ${token}` }
+        }
+        const response = await axios(config);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+}
+
+export const GetBlogUpdate = async (datas, token) => {
+    try {
+        const config = {
+            method: "post",
+            url: "/blog/update",
+            data: datas,
             headers: { "Authorization": `Bearer ${token}` }
         }
         const response = await axios(config);

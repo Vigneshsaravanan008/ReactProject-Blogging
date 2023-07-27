@@ -30,7 +30,6 @@ function Home() {
         token = localStorage.getItem('token');
         var getResponse = await GetBlog(token);
         setList(getResponse.blogs);
-        console.log(list);
     }
 
     useEffect(() => {
@@ -56,9 +55,10 @@ function Home() {
                             <div className="py-3">
                                 {list && list.map((tag, index) => (
                                     <Card key={index} className="m-2">
-                                        <Card.Body>{tag?.title}
-                                            <Button className="text-end">
-
+                                        <Card.Body>
+                                            {tag?.title}
+                                            <Button href={`/blog/edit/${tag?.id}`}>
+                                                Edit
                                             </Button>
                                         </Card.Body>
                                     </Card>
