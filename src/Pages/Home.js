@@ -55,7 +55,7 @@ function Home() {
                             <div className="py-3">
                                 {list && list.map((tag, index) => (
                                     <Card key={index} className="m-2">
-                                        <Card.Body>
+                                        <Card.Body className="d-flex justify-content-between align-items-center">
                                             {tag?.title}
                                             <Button href={`/blog/edit/${tag?.id}`}>
                                                 Edit
