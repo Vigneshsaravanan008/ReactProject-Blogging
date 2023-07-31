@@ -53,7 +53,7 @@ function Header() {
 
                         <Nav className="d-flex px-3">
                             {
-                                user ?
+                                user != null ?
                                     <Col>
                                         <Link to="/profile">
                                             <Image src="https://www.blogger.com/img/logo_blogger_40px.png" roundedCircle />
