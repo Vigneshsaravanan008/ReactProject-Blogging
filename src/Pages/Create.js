@@ -34,7 +34,6 @@ function Create() {
         formData.append("tags", tags)
         var USER_TOKEN = localStorage.getItem('token');
         const getBlogresponse = await GetBlogCreate(formData, USER_TOKEN);
-        console.log(getBlogresponse);
     }
 
     return (

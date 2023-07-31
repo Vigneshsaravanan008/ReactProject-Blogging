@@ -8,6 +8,7 @@
 
 * {
   margin: 5px;
+  background-color: #f3f2ef;
 }
 
 .content {
@@ -68,4 +69,3 @@ a {
 .checkbox {
   margin-left: 10px;
 }
-

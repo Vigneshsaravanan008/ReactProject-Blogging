@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { GetProfile } from '../Auth/Api';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import './Sidebar.css'
@@ -23,6 +23,12 @@ function Sidebar() {
         }
     }
 
+    const Logout = () => {
+        localStorage.clear();
+        alert();
+        navigate('/login');
+    }
+
     useEffect(() => {
         getProfile();
     }, [])
@@ -32,7 +38,7 @@ function Sidebar() {
                 <Col>
                     <Image src="https://www.blogger.com/img/logo_blogger_40px.png" roundedCircle />
                 </Col>
-                {user.name}
+                {user?.name}
                 <div>
                     <Button href="/blog/create" variant="primary" className="mt-3">Add Post</Button>
                 </div>
@@ -49,10 +55,14 @@ function Sidebar() {
                     Pages
                 </li>
                 <li className="sidebar_element">
-                    Logout
+                    <Link onClick={(e) => {
+                        Logout(e)
+                    }}>
+                        Logout
+                    </Link>
                 </li>
             </ul>
-        </div>
+        </div >
     )
 }
 

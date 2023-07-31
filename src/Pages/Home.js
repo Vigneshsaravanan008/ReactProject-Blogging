@@ -18,6 +18,9 @@ function Home() {
 
     const getProfile = async () => {
         token = localStorage.getItem('token');
+        if (token == null) {
+            navigate('/login');
+        }
         var getResponse = await GetProfile(token);
         if (getResponse.status === 403) {
             navigate('/login');
@@ -57,9 +60,14 @@ function Home() {
                                     <Card key={index} className="m-2">
                                         <Card.Body className="d-flex justify-content-between align-items-center">
                                             {tag?.title}
-                                            <Button href={`/blog/edit/${tag?.id}`}>
-                                                Edit
-                                            </Button>
+                                            <div className="justify-content-right">
+                                                <Button href={`/blog/edit/${tag?.id}`} className="m-2">
+                                                    Edit
+                                                </Button>
+                                                <Button href={`/blog/edit/${tag?.id}`} className="m-2">
+                                                    Delete
+                                                </Button>
+                                            </div>
                                         </Card.Body>
                                     </Card>
                                 ))}

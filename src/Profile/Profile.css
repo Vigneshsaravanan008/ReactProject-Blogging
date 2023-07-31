@@ -1,0 +1,30 @@
+.image_profile img {
+  background-color: #fff;
+  border: 5px solid #fff;
+  position: absolute;
+  top: 120px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.font-gray {
+  color: #48464b;
+}
+
+.profile-hr {
+  border: 0;
+  border-top: 1px solid gray;
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+
+.profile-bg {
+  border: 1px solid grey;
+}

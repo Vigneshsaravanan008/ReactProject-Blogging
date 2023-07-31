@@ -18,8 +18,8 @@ function Register() {
 
     useEffect(() => {
         var USER_TOKEN = localStorage.getItem('token');
-        if (USER_TOKEN === undefined) {
-            navigate('/login');
+        if (USER_TOKEN === null) {
+            navigate('/register');
         } else {
             var getResponse = GetProfile(USER_TOKEN);
             if (getResponse.status === 403) {
@@ -28,7 +28,7 @@ function Register() {
                 navigate('/home');
             }
         }
-    })
+    }, [])
 
     const RegisterSubmit = async () => {
         const formData = new FormData()

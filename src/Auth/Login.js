@@ -17,7 +17,7 @@ function Login() {
 
     useEffect(() => {
         var USER_TOKEN = localStorage.getItem('token');
-        if (USER_TOKEN === undefined) {
+        if (USER_TOKEN === null) {
             navigate('/login');
         } else {
             var getResponse = GetProfile(USER_TOKEN);
@@ -27,7 +27,7 @@ function Login() {
                 navigate('/home');
             }
         }
-    })
+    }, [])
     const RegisterSubmit = async () => {
         const formData = new FormData()
         formData.append("email", email)
