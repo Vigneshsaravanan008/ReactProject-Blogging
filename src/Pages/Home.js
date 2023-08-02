@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { GetProfile, GetBlog } from '../Auth/Api';
 import { useNavigate } from "react-router-dom";
 import Sidebar from './Sidebar';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faAirFreshener } from '@fortawesome/free-solid-svg-icons'
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 import Card from 'react-bootstrap/Card';
 import Footer from './Footer';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
+import Col from 'react-bootstrap/Col';
+import './Home.css';
 
 function Home() {
     var [token] = useState('');
@@ -41,43 +43,60 @@ function Home() {
     }, [])
     return (
         <div className="container">
-            <div className="row">
-                <div className="col-lg-2">
-                    <Sidebar />
-                </div>
-                <div className="col-lg-8">
-                    <div className="listing_bar">
-                        <div className="p-3">
-                            <Breadcrumb>
-                                <Breadcrumb.Item href="#"> <FontAwesomeIcon icon={faHome} color="black" className="px-1" />Home</Breadcrumb.Item>
-                                {/* <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-                                    Library
-                                </Breadcrumb.Item>
-                                <Breadcrumb.Item active>Data</Breadcrumb.Item> */}
-                            </Breadcrumb>
-                            <div className="py-3">
-                                {list && list.map((tag, index) => (
-                                    <Card key={index} className="m-2">
-                                        <Card.Body className="d-flex justify-content-between align-items-center">
-                                            {tag?.title}
-                                            <div className="justify-content-right">
-                                                <Button href={`/blog/edit/${tag?.id}`} className="m-2">
-                                                    Edit
-                                                </Button>
-                                                <Button href={`/blog/edit/${tag?.id}`} className="m-2">
-                                                    Delete
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                ))}
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-lg-2">
+                        <Sidebar />
+                    </div>
+                    <div className="col-lg-7">
+                        <Card className="mx-4 mt-3">
+                            <Card.Body className="d-flex justify-content-between align-items-center">
+                                <Col>
+                                    <Image src="https://www.blogger.com/img/logo_blogger_40px.png" roundedCircle />
+                                </Col>
+                                <InputGroup className="px-3">
+                                    <Form.Control
+                                        className="post_input"
+                                        placeholder="Add a Post"
+                                        aria-label="Username"
+                                        aria-describedby="basic-addon1"
+                                    />
+                                </InputGroup>
+                            </Card.Body>
+                            <hr />
+                            <Card.Body className="d-flex justify-content-between align-items-center mx-5">
+                                <span>photo</span>
+                                <span>Video</span>
+                                <span>Blog</span>
+                                <span>Article</span>
+                            </Card.Body>
+                        </Card>
+                        <hr className="m-4" />
+                        <div className="listing_bar m-3">
+                            <div className="p-3">
+                                <div className="py-3">
+                                    {list && list.map((tag, index) => (
+                                        <Card key={index} className="m-2">
+                                            <Card.Body className="d-flex justify-content-between align-items-center">
+                                                {tag?.title}
+                                                <div className="justify-content-right">
+                                                    <Button href={`/blog/edit/${tag?.id}`} className="m-2">
+                                                        Edit
+                                                    </Button>
+                                                    <Button href={`/blog/edit/${tag?.id}`} className="m-2">
+                                                        Delete
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    ))}
+                                </div>
                             </div>
-
                         </div>
                     </div>
-                </div>
-                <div className="col-md-2">
-                    <Footer />
+                    <div className="col-md-3">
+                        <Footer />
+                    </div>
                 </div>
             </div>
         </div>

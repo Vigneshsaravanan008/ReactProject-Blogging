@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-15{
+  font-size: 15px;
+}

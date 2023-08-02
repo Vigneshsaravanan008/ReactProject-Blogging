@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { GetProfile } from '../Auth/Api';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { FiHome, FiMessageCircle, FiUsers, FiBell } from "react-icons/fi";
 
 function Header() {
     var [token] = useState('');
@@ -28,11 +29,12 @@ function Header() {
     useEffect(() => {
         getProfile();
     }, [])
+
     return (
         <div>
             <Navbar bg="primary" data-bs-theme="dark" expand="md" className="bg-body-tertiary">
                 <Container>
-                    <Navbar.Brand href={user ? "/home" : "/"}>Blogging</Navbar.Brand>
+                    <Navbar.Brand href={user ? "/" : "/login"}>Blogging</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -40,28 +42,56 @@ function Header() {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
+                            <Form className="d-flex">
+                                <Form.Control
+                                    type="search"
+                                    placeholder="Search"
+                                    className="me-2"
+                                    aria-label="Search"
+                                />
+                                {/* <Button variant="outline-success">Search</Button> */}
+                            </Form>
                         </Nav>
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
 
                         <Nav className="d-flex px-3">
-                            {
-                                user != null ?
-                                    <Col>
-                                        <Link to="/profile">
-                                            <Image src="https://www.blogger.com/img/logo_blogger_40px.png" roundedCircle />
-                                        </Link>
-                                    </Col>
-                                    :
-                                    <Button href="/login">Login</Button>
-                            }
+                            <Nav.Item className="px-3">
+                                <Nav.Link eventKey="1" className="fs-15" href="#/home">
+                                    <div className="text-center">
+                                        <FiHome />
+                                    </div>
+                                    Home
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className="px-3">
+                                <Nav.Link eventKey="1" className="fs-15" href="#/home">
+                                    <div className="text-center"> <FiMessageCircle /></div> 
+                                    Messaging
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className="px-3">
+                                <Nav.Link eventKey="1" className="fs-15" href="#/home">
+                                    <div className="text-center"><FiUsers /></div> 
+                                    My Network
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className="px-3">
+                                <Nav.Link eventKey="1" className="fs-15" href="#/home">
+                                    <div className="text-center"> <FiBell /></div>  
+                                    Notification
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className="mx-3 mt-3">
+                                {
+                                    user != null ?
+                                        <Col>
+                                            <Link to="/profile">
+                                                <Image src="https://www.blogger.com/img/logo_blogger_40px.png" roundedCircle />
+                                            </Link>
+                                        </Col>
+                                        :
+                                        <Button href="/login">Login</Button>
+                                }
+                            </Nav.Item>
                         </Nav>
 
                     </Navbar.Collapse>

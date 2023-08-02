@@ -4,7 +4,7 @@
 
 .sidebar_content {
   border: 0.5px solid #c8c8c8;
-  border-radius: 20px;
+  border-radius: 10px;
   width: auto;
   margin-top: 15px;
   background-color: white;
@@ -21,19 +21,13 @@
   list-style-type: none;
 }
 
-a {
-  text-decoration: none;
-}
-
-.listing_bar {
-  border: 0.5px solid #c8c8c8;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-
 .label-tag {
   background-color: rgb(161, 161, 161);
   border-radius: 10px;
   margin: 5px;
   padding: 10px;
+}
+
+.sidebar_hr {
+  margin: 0;
 }

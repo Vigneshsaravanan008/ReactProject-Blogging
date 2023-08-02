@@ -25,7 +25,7 @@ function Register() {
             if (getResponse.status === 403) {
                 navigate('/login');
             } else {
-                navigate('/home');
+                navigate('/');
             }
         }
     }, [])

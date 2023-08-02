@@ -1,0 +1,11 @@
+.footer_text {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_link {
+  margin: 5px;
+}

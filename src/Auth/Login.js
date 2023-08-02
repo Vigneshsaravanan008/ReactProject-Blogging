@@ -24,7 +24,7 @@ function Login() {
             if (getResponse.status === 403) {
                 navigate('/login');
             } else {
-                navigate('/home');
+                navigate('/');
             }
         }
     }, [])
@@ -35,7 +35,7 @@ function Login() {
         const getLoginresponse = await LoginApi(formData);
         if (getLoginresponse.status === 200) {
             localStorage.setItem('token', getLoginresponse.token);
-            navigate("/home");
+            navigate("/");
         } else {
             setAlert(true);
             setMessage(getLoginresponse.message)

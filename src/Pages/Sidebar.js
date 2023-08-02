@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import './Sidebar.css'
-import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function Sidebar() {
     var [token] = useState('');
@@ -33,36 +33,33 @@ function Sidebar() {
         getProfile();
     }, [])
     return (
-        <div className="sidebar_content">
-            <div className="text-center mt-2 p-3">
-                <Col>
-                    <Image src="https://www.blogger.com/img/logo_blogger_40px.png" roundedCircle />
-                </Col>
-                {user?.name}
-                <div>
-                    <Button href="/blog/create" variant="primary" className="mt-3">Add Post</Button>
+        <>
+            <div className="sidebar_content">
+                <div className="mt-2">
+                    <div className="text-center">
+                        <Col>
+                            <Image src="https://www.blogger.com/img/logo_blogger_40px.png" roundedCircle />
+                        </Col>
+                        {user?.name}
+                    </div>
+                    <div className="d-flex justify-content-between px-3 mt-2">
+                        <div>Following <p className="text-info text-center">35k</p></div>
+                        <div>Followers <p className="text-info text-center">1M</p></div>
+                    </div>
+                    {/* <Button href="/blog/create" variant="primary" className="mt-3">Add Post</Button> */}
                 </div>
-            </div>
-            <hr />
-            <ul>
-                <li className="sidebar_element">
-                    About
-                </li>
-                <li className="sidebar_element">
-                    Pricing
-                </li>
-                <li className="sidebar_element">
-                    Pages
-                </li>
-                <li className="sidebar_element">
-                    <Link onClick={(e) => {
-                        Logout(e)
-                    }}>
-                        Logout
-                    </Link>
-                </li>
-            </ul>
-        </div >
+            </div >
+            <Card className="mt-3">
+                <Card.Body>
+                    <Card.Text className="text-info">Recent</Card.Text>
+                    <ul>
+                        <li>#React</li>
+                        <li>#Next</li>
+                        <li>#Python</li>
+                    </ul>
+                </Card.Body>
+            </Card>
+        </>
     )
 }
 

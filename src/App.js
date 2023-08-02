@@ -1,6 +1,6 @@
 import Header from './Layouts/Header';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-// import './Content.css';
+import './Pages/Style.css';
 import Login from './Auth/Login';
 import Register from './Auth/Register';
 import Home from './Pages/Home';
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/blog/create" element={<Create />} />
         <Route path="/blog/edit/:id" element={<Edit />} />
         <Route path="/profile" element={<Profile />} />
