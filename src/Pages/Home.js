@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import './Home.css';
+import { FiCamera, FiFileMinus, FiVideo } from "react-icons/fi";
 
 function Home() {
     var [token] = useState('');
@@ -49,8 +50,8 @@ function Home() {
                         <Sidebar />
                     </div>
                     <div className="col-lg-7">
-                        <Card className="mx-4 mt-3">
-                            <Card.Body className="d-flex justify-content-between align-items-center">
+                        <Card className="mx-5 mt-3">
+                            <Card.Body className="d-flex justify-content-between align-items-center post_line">
                                 <Col>
                                     <Image src="https://www.blogger.com/img/logo_blogger_40px.png" roundedCircle />
                                 </Col>
@@ -63,12 +64,11 @@ function Home() {
                                     />
                                 </InputGroup>
                             </Card.Body>
-                            <hr />
-                            <Card.Body className="d-flex justify-content-between align-items-center mx-5">
-                                <span>photo</span>
-                                <span>Video</span>
-                                <span>Blog</span>
-                                <span>Article</span>
+                            <Card.Body className="d-flex justify-content-between align-items-center">
+                                <span><FiCamera className="m-2" />photo</span>
+                                <span><FiVideo className="m-2" />Video</span>
+                                <span><FiFileMinus className="m-2" />Blog</span>
+                                <span><FiFileMinus className="m-2" />Article</span>
                             </Card.Body>
                         </Card>
                         <hr className="m-4" />

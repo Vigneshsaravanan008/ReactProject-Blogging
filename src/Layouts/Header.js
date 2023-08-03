@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import { GetProfile } from '../Auth/Api';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { FiHome, FiMessageCircle, FiUsers, FiBell } from "react-icons/fi";
+import { FiHome, FiMessageCircle, FiUsers, FiBell, FiCamera } from "react-icons/fi";
 
 function Header() {
     var [token] = useState('');
@@ -63,20 +63,20 @@ function Header() {
                                 </Nav.Link>
                             </Nav.Item>
                             <Nav.Item className="px-3">
-                                <Nav.Link eventKey="1" className="fs-15" href="#/home">
-                                    <div className="text-center"> <FiMessageCircle /></div> 
+                                <Nav.Link eventKey="1" className="fs-15" href="/messaging/thread/new">
+                                    <div className="text-center"> <FiMessageCircle /></div>
                                     Messaging
                                 </Nav.Link>
                             </Nav.Item>
                             <Nav.Item className="px-3">
                                 <Nav.Link eventKey="1" className="fs-15" href="#/home">
-                                    <div className="text-center"><FiUsers /></div> 
+                                    <div className="text-center"><FiUsers /></div>
                                     My Network
                                 </Nav.Link>
                             </Nav.Item>
                             <Nav.Item className="px-3">
                                 <Nav.Link eventKey="1" className="fs-15" href="#/home">
-                                    <div className="text-center"> <FiBell /></div>  
+                                    <div className="text-center"> <FiBell /></div>
                                     Notification
                                 </Nav.Link>
                             </Nav.Item>

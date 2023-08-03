@@ -1,0 +1,99 @@
+.border_message {
+  border-bottom: 1px solid grey;
+}
+
+.contact_list {
+  overflow-y: auto;
+}
+
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}*/
+
+.container_list {
+  display: flex;
+  height: 80vh;
+} 
+
+.contact-list {
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  overflow-y: auto; /* Add vertical scrollbar if necessary */
+}
+
+.contact-list h2 {
+  margin-bottom: 10px;
+}
+
+.contact-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.contact-list li:hover {
+  background-color: #e0e0e0;
+}
+
+.message-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.message-history {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Add vertical scrollbar for the message history */
+}
+
+.message {
+  max-width: 70%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.incoming {
+  background-color: #dcf8c6;
+  align-self: flex-start;
+}
+
+.outgoing {
+  background-color: #e1ffc7;
+  align-self: flex-end;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: sticky; /* Fix the message input at the bottom */
+  bottom: 0;
+  background-color: white;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.message-input button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import Create from './Pages/Create';
 import Edit from './Pages/Edit';
 import Profile from './Profile/Profile';
+import Message from './Message/Message';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/blog/create" element={<Create />} />
         <Route path="/blog/edit/:id" element={<Edit />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/messaging/thread/new" element={<Message />} />
       </Routes>
     </BrowserRouter>
   );
