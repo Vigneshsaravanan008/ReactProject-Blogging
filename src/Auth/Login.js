@@ -17,15 +17,17 @@ function Login() {
 
     useEffect(() => {
         var USER_TOKEN = localStorage.getItem('token');
+        console.log(USER_TOKEN);
         if (USER_TOKEN === null) {
             navigate('/login');
         } else {
             var getResponse = GetProfile(USER_TOKEN);
-            if (getResponse.status === 403) {
-                navigate('/login');
-            } else {
-                navigate('/');
-            }
+            console.log(getResponse.status);
+            // if (getResponse.status === 403) {
+            //     navigate('/login');
+            // } else {
+            //     navigate('/');
+            // }
         }
     }, [])
     const RegisterSubmit = async () => {

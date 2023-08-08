@@ -15,12 +15,12 @@
 .container_list {
   display: flex;
   height: 80vh;
-} 
+}
 
 .contact-list {
-  width: 200px;
+  width: 300px;
   background-color: #f0f0f0;
-  padding: 20px;
+  padding-block: 5px;
   overflow-y: auto; /* Add vertical scrollbar if necessary */
 }
 
@@ -40,6 +40,7 @@
 
 .contact-list li:hover {
   background-color: #e0e0e0;
+  border-left: 1px solid black;
 }
 
 .message-window {
@@ -89,6 +90,10 @@
   margin-right: 10px;
 }
 
+.parent_message {
+  height: 30px;
+}
+
 .message-input button {
   background-color: #4caf50;
   color: white;
@@ -96,4 +101,34 @@
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.contact_name {
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 60px;
+}
+
+.latest_message {
+  margin-top: 20px;
+  padding-inline: 2px;
+}
+
+.message_time {
+  font-size: 12px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+.message_header {
+  height: 60px;
+}
+
+.message_contact_person {
+  margin: 5px;
+}
+
+.user_info {
+  position: absolute;
+  margin-top: 10px;
 }
