@@ -16,6 +16,24 @@ export const LoginApi = async (datas) => {
     }
 }
 
+export const GoogleLoginApi = async (datas) => {
+    try {
+        const config = {
+            method: "post",
+            url: "google-login",
+            data: datas,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        const response = await axios(config);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+        return []
+    }
+}
+
 export const RegisterApi = async (datas) => {
     try {
         const config = {
@@ -41,8 +59,7 @@ export const GetProfile = async (token) => {
         const response = await axios(config);
         return response.data;
     } catch (error) {
-        console.log(error);
-        return [];
+        return error.response.status;
     }
 }
 

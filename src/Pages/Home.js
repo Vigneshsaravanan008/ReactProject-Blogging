@@ -40,7 +40,7 @@ function Home() {
 
     useEffect(() => {
         getProfile();
-        getBlogList();
+        // getBlogList();
     }, [])
     return (
         <div className="container">

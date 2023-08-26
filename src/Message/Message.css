@@ -120,10 +120,6 @@
   margin-left: 50px;
 }
 
-.message_header {
-  height: 60px;
-}
-
 .message_contact_person {
   margin: 5px;
 }
@@ -131,4 +127,8 @@
 .user_info {
   position: absolute;
   margin-top: 10px;
+}
+
+.message_title {
+  padding: 10px;
 }

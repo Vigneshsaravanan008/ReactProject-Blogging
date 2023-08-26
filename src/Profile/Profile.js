@@ -6,8 +6,10 @@ import { useEffect, useState } from 'react';
 import { GetProfile } from '../Auth/Api';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import Carousel from 'react-bootstrap/Carousel';
-
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { FiHome, FiFile } from "react-icons/fi";
 function Profile() {
 
     var [token] = useState('');
@@ -58,7 +60,7 @@ function Profile() {
                                 Some quick example text to build on the card title and make up the
                                 bulk of the card's content.
                             </Card.Text>
-                            <Carousel data-bs-theme="dark">
+                            {/* <Carousel data-bs-theme="dark">
                                 <Carousel.Item>
                                     <Card>
                                         <Card.Body>This is some text within a card body.</Card.Body>
@@ -84,23 +86,83 @@ function Profile() {
                                         <Card.Body>This is some text within a card body.</Card.Body>
                                     </Card>
                                 </Carousel.Item>
-                            </Carousel>
+                            </Carousel> */}
+                            <OwlCarousel items={3}
+                                className="owl-theme"
+                                loop
+                                margin={8} >
+                                <div> <Card>
+                                    <Card.Body>Add your Favourites.</Card.Body>
+                                </Card></div>
+                                <div> <Card>
+                                    <Card.Body>View your Posts Comments</Card.Body>
+                                </Card></div>
+                                <div> <Card>
+                                    <Card.Body>Saved Posts</Card.Body>
+                                </Card></div>
+                            </OwlCarousel>
                         </Card.Body>
                     </Card>
                 </div>
                 <div className="col-md-3">
-                    <Card border="profile-bg p-3">
-                        <h5 className="">
-                            Profile Language
-                        </h5>
-                        <hr className="profile-hr" />
-                        <div className="">
-                            <h5>Share Profile</h5>
-                            <div>
-                                www.linkedin.com/in/vignesh-saravanan-9839481a4
+                    <ul className="footer_text mt-3 fs-12">
+                        <li className="footer_link">About</li>
+                        <li className="footer_link">Accessibility</li>
+                        <li className="footer_link">Privacy & Terms</li>
+                        <li className="footer_link">Ad Choices</li>
+                        <li className="footer_link">Advertising</li>
+                    </ul>
+                    <p className="text-center text-primary mt-2 fs-12">Blogging © 2023 Corporation © 2023</p>
+                </div>
+            </div>
+            <div className="card_gap">
+                <div className='row col-md-9'>
+                    <div className="col-md-3">
+                        <Card className="profile-bg">
+                            <Card.Title className='p-2'>
+                                Analytics
+                            </Card.Title>
+                            <div className="">
+                                <ul>
+                                    <li className="p-2 border-bt-line">
+                                        <FiHome /> Overview
+                                    </li>
+                                    <li className="p-2">
+                                        Education
+                                    </li>
+                                    <li className="p-2">
+                                        Friends
+                                    </li>
+                                    <li className="p-2">
+                                        Settings
+                                    </li>
+                                    <li className="p-2">
+                                        Logout
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                    </Card>
+                        </Card>
+                    </div>
+                    <div className="col-md-9">
+                        <Card className="profile-bg">
+                            <Card.Title className='p-2'>
+                                Overview
+                            </Card.Title>
+                            <div>
+                                <ul>
+                                    <li className="p-3">
+                                        <Card style={{ width: '18rem' }}>
+                                            <Card.Body>
+                                                <Card.Title><FiFile /> Posts</Card.Title>
+                                                <h6>100</h6>
+                                                </Card.Body>
+                                        </Card>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </Card>
+                    </div>
                 </div>
             </div>
         </div>

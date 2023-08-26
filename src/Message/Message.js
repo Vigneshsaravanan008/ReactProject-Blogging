@@ -13,16 +13,21 @@ function Message() {
                     <Card>
                         <div class="container_list">
                             <div class="contact-list">
-                                <h5 className="text-right px-2 parent_message">Messaging</h5>
-                                <hr />
-                                <InputGroup className="px-3">
-                                    <Form.Control
-                                        className="post_input"
-                                        placeholder="Search..."
-                                        aria-label="Search"
-                                        aria-describedby="basic-addon1"
-                                    />
-                                </InputGroup>
+                                <div className="message_title">
+                                    <h5 className="text-right px-2 parent_message">Messaging</h5>
+                                    <hr />
+                                </div>
+                                <div className="d-flex">
+                                    <Image src="https://www.blogger.com/img/logo_blogger_40px.png" width="50px" height="50px" className="px-1" roundedCircle />
+                                    <InputGroup className="px-1">
+                                        <Form.Control
+                                            className="post_input"
+                                            placeholder="Search..."
+                                            aria-label="Search"
+                                            aria-describedby="basic-addon1"
+                                        />
+                                    </InputGroup>
+                                </div>
                                 <hr />
                                 <ul>
                                     <li>
@@ -114,7 +119,14 @@ function Message() {
                     </Card>
                 </div>
                 <div className="col-md-3">
-                    Footer
+                    <ul className="footer_text mt-3 fs-12">
+                        <li className="footer_link">About</li>
+                        <li className="footer_link">Accessibility</li>
+                        <li className="footer_link">Privacy & Terms</li>
+                        <li className="footer_link">Ad Choices</li>
+                        <li className="footer_link">Advertising</li>
+                    </ul>
+                    <p className="text-center text-primary mt-2 fs-12">Blogging © 2023 Corporation © 2023</p>
                 </div>
             </div>
         </div>

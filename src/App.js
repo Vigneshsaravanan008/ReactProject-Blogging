@@ -8,12 +8,15 @@ import Create from './Pages/Create';
 import Edit from './Pages/Edit';
 import Profile from './Profile/Profile';
 import Message from './Message/Message';
+import Chat from './Socket/Chat';
+import Player from './Player/Player';
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
+        <Route path="/chat" element={<Chat />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Home />} />
@@ -21,6 +24,7 @@ function App() {
         <Route path="/blog/edit/:id" element={<Edit />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/messaging/thread/new" element={<Message />} />
+        <Route path="/player" element={<Player />} />
       </Routes>
     </BrowserRouter>
   );

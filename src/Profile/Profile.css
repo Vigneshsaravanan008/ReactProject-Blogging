@@ -28,3 +28,12 @@
 .profile-bg {
   border: 1px solid grey;
 }
+
+.card_gap {
+  margin-top: 15px;
+}
+
+.border-bt-line {
+  border-bottom: 1px solid black;
+  margin: 10px;
+}
